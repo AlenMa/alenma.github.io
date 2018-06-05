@@ -13,7 +13,7 @@ authors: alenma
 # token
 # token should be separated by '#'
 # example: 5#c31bffc137f44faf7efc4a84da827g7ca2cfeaa
-token: 6#53bda1b75c06288a57f296ba47a934e23562ffb
+token: 653bda1b75c06288a57f296ba47a934e23562ffb
 
 # posts per page
 perpage: 10
