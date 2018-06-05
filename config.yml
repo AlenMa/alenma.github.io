@@ -1,0 +1,30 @@
+# is a organization repository ?
+organization: false
+
+# post order
+# order by create time" or "update time"
+# 'UPDATED_AT' or 'CREATED_AT'
+order: 'UPDATED_AT'
+
+# site title
+title: alenma's blog
+
+# github user: your github username
+user: alenma
+
+# issue repository: your issues repository, the issues is the blog content
+repository: alenma.github.io
+
+# multi-authors, the user name above is included in
+# multi-authors must be separated by ',' 
+# example: author0,author1
+authors: alenma
+
+# token
+# token must be separated by '#'
+# if your token is 5c31bffc137f44faf7efc4a84da827g7ca2cfeaa 
+# the token value is 5#c31bffc137f44faf7efc4a84da827g7ca2cfeaa
+token: a#e9e755f135bf853d54a8f831016c138012b7547
+
+# posts per page
+perpage: 10
