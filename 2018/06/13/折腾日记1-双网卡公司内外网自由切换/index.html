@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://alenma.github.io">
   <title>折腾日记1-双网卡公司内外网自由切换 | Alenma&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="搭建起hexo之后，由于公司内网代理的缘故，每次使用hexo d 命令都无法直接部署，需要手动复制.deploy_git文件夹生成的内容到指定目录再通过https的方式push到github上去。查边了资料，尝试了windows,linux环境，依然无法解决git协议代理的配置问题。最终放弃，想起双网卡配置路由表，实现部分ip走内网路由，其余ip走外网路由的方式。记录下整个过程，以便下次直接使用。">
+  <meta name="description" content="搭建起hexo之后，由于公司内网代理的缘故，每次使用hexo d 命令都无法直接部署，需要手动复制.deploy_git文件夹生成的内容到指定目录再通过https的方式push到github上去。查遍了资料，尝试了windows,linux环境，依然无法解决git协议代理的配置问题。最终放弃，想起双网卡配置路由表，实现部分ip走内网路由，其余ip走外网路由的方式。记录下整个过程，以便下次直接使用。">
 <meta name="keywords" content="折腾,网络">
 <meta property="og:type" content="article">
 <meta property="og:title" content="折腾日记1-双网卡公司内外网自由切换">
 <meta property="og:url" content="https://alenma.github.io/2018/06/13/折腾日记1-双网卡公司内外网自由切换/index.html">
 <meta property="og:site_name" content="Alenma&#39;s Blog">
-<meta property="og:description" content="搭建起hexo之后，由于公司内网代理的缘故，每次使用hexo d 命令都无法直接部署，需要手动复制.deploy_git文件夹生成的内容到指定目录再通过https的方式push到github上去。查边了资料，尝试了windows,linux环境，依然无法解决git协议代理的配置问题。最终放弃，想起双网卡配置路由表，实现部分ip走内网路由，其余ip走外网路由的方式。记录下整个过程，以便下次直接使用。">
+<meta property="og:description" content="搭建起hexo之后，由于公司内网代理的缘故，每次使用hexo d 命令都无法直接部署，需要手动复制.deploy_git文件夹生成的内容到指定目录再通过https的方式push到github上去。查遍了资料，尝试了windows,linux环境，依然无法解决git协议代理的配置问题。最终放弃，想起双网卡配置路由表，实现部分ip走内网路由，其余ip走外网路由的方式。记录下整个过程，以便下次直接使用。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-13T06:10:05.332Z">
+<meta property="og:updated_time" content="2018-06-13T06:13:28.547Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="折腾日记1-双网卡公司内外网自由切换">
-<meta name="twitter:description" content="搭建起hexo之后，由于公司内网代理的缘故，每次使用hexo d 命令都无法直接部署，需要手动复制.deploy_git文件夹生成的内容到指定目录再通过https的方式push到github上去。查边了资料，尝试了windows,linux环境，依然无法解决git协议代理的配置问题。最终放弃，想起双网卡配置路由表，实现部分ip走内网路由，其余ip走外网路由的方式。记录下整个过程，以便下次直接使用。">
+<meta name="twitter:description" content="搭建起hexo之后，由于公司内网代理的缘故，每次使用hexo d 命令都无法直接部署，需要手动复制.deploy_git文件夹生成的内容到指定目录再通过https的方式push到github上去。查遍了资料，尝试了windows,linux环境，依然无法解决git协议代理的配置问题。最终放弃，想起双网卡配置路由表，实现部分ip走内网路由，其余ip走外网路由的方式。记录下整个过程，以便下次直接使用。">
   
     <link rel="alternative" href="/atom.xml" title="Alenma&#39;s Blog" type="application/atom+xml">
   
@@ -163,10 +163,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>搭建起hexo之后，由于公司内网代理的缘故，每次使用hexo d 命令都无法直接部署，需要手动复制.deploy_git文件夹生成的内容到指定目录再通过https的方式push到github上去。查边了资料，尝试了windows,linux环境，依然无法解决git协议代理的配置问题。最终放弃，想起双网卡配置路由表，实现部分ip走内网路由，其余ip走外网路由的方式。记录下整个过程，以便下次直接使用。</p>
+        <p>搭建起hexo之后，由于公司内网代理的缘故，每次使用hexo d 命令都无法直接部署，需要手动复制.deploy_git文件夹生成的内容到指定目录再通过https的方式push到github上去。查遍了资料，尝试了windows,linux环境，依然无法解决git协议代理的配置问题。最终放弃，想起双网卡配置路由表，实现部分ip走内网路由，其余ip走外网路由的方式。记录下整个过程，以便下次直接使用。</p>
 <ol>
 <li>无线网卡连接外网，有线连接内网。</li>
-<li>打开命令号，输入 route print 会发现两个 0.0.0.0 的网络目标记下两个网关，再去网络配置界面查看一下内网网管，区分好哪个是内网哪个是外网。</li>
+<li>打开命令行，输入 route print 会发现两个 0.0.0.0 的网络目标记下两个网关，再去网络配置界面查看一下内网网管，区分好哪个是内网哪个是外网。</li>
 <li><p>删除0.0.0.0的路由记录</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">route delte 0.0.0.0</span><br></pre></td></tr></table></figure>
 </li>
