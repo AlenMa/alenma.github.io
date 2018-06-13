@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://alenma.github.io">
-  <title>Tag: 折腾 | Alenma&#39;s Blog</title>
+  <title>折腾日记1-双网卡公司内外网自由切换 | Alenma&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="记录想法,生活，技术的地方">
-<meta name="keywords" content="产品,用户体验,前端,js,python,极客,CTF,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Alenma&#39;s Blog">
-<meta property="og:url" content="https://alenma.github.io/tags/折腾/index.html">
+  <meta name="description" content="搭建起hexo之后，由于公司内网代理的缘故，每次使用hexo d 命令都无法直接部署，需要手动复制.deploy_git文件夹生成的内容到指定目录再通过https的方式push到github上去。查边了资料，尝试了windows,linux环境，依然无法解决git协议代理的配置问题。最终放弃，想起双网卡配置路由表，实现部分ip走内网路由，其余ip走外网路由的方式。记录下整个过程，以便下次直接使用。">
+<meta name="keywords" content="折腾,网络">
+<meta property="og:type" content="article">
+<meta property="og:title" content="折腾日记1-双网卡公司内外网自由切换">
+<meta property="og:url" content="https://alenma.github.io/2018/06/13/折腾日记1-双网卡公司内外网自由切换/index.html">
 <meta property="og:site_name" content="Alenma&#39;s Blog">
-<meta property="og:description" content="记录想法,生活，技术的地方">
+<meta property="og:description" content="搭建起hexo之后，由于公司内网代理的缘故，每次使用hexo d 命令都无法直接部署，需要手动复制.deploy_git文件夹生成的内容到指定目录再通过https的方式push到github上去。查边了资料，尝试了windows,linux环境，依然无法解决git协议代理的配置问题。最终放弃，想起双网卡配置路由表，实现部分ip走内网路由，其余ip走外网路由的方式。记录下整个过程，以便下次直接使用。">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-06-13T06:10:05.332Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Alenma&#39;s Blog">
-<meta name="twitter:description" content="记录想法,生活，技术的地方">
+<meta name="twitter:title" content="折腾日记1-双网卡公司内外网自由切换">
+<meta name="twitter:description" content="搭建起hexo之后，由于公司内网代理的缘故，每次使用hexo d 命令都无法直接部署，需要手动复制.deploy_git文件夹生成的内容到指定目录再通过https的方式push到github上去。查边了资料，尝试了windows,linux环境，依然无法解决git协议代理的配置问题。最终放弃，想起双网卡配置路由表，实现部分ip走内网路由，其余ip走外网路由的方式。记录下整个过程，以便下次直接使用。">
   
     <link rel="alternative" href="/atom.xml" title="Alenma&#39;s Blog" type="application/atom+xml">
   
@@ -142,60 +143,178 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-折腾日记1-双网卡公司内外网自由切换" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/13/折腾/" class="archive-article-date">
-  	<time datetime="2018-06-13T04:28:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-13</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/13/折腾/">折腾</a>
+    <h1 class="article-title" itemprop="name">
+      折腾日记1-双网卡公司内外网自由切换
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/06/13/折腾日记1-双网卡公司内外网自由切换/" class="archive-article-date">
+  	<time datetime="2018-06-13T04:28:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>搭建起hexo之后，由于公司内网代理的缘故，每次使用hexo d 命令都无法直接部署，需要手动复制.deploy_git文件夹生成的内容到指定目录再通过https的方式push到github上去。查边了资料，尝试了windows,linux环境，依然无法解决git协议代理的配置问题。最终放弃，想起双网卡配置路由表，实现部分ip走内网路由，其余ip走外网路由的方式。记录下整个过程，以便下次直接使用。</p>
+<ol>
+<li>无线网卡连接外网，有线连接内网。</li>
+<li>打开命令号，输入 route print 会发现两个 0.0.0.0 的网络目标记下两个网关，再去网络配置界面查看一下内网网管，区分好哪个是内网哪个是外网。</li>
+<li><p>删除0.0.0.0的路由记录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">route delte 0.0.0.0</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加0.0.0.0路由记录到外网网关。记得添加-p参数，代表永久路由。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">route add -p 0.0.0.0 mask 0.0.0.0 外网网关</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加需要走内网的网段，10.0.0.0 和172.0.0.0 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">route add -p 10.0.0.0 mask 255.0.0.0 内网网关</span><br><span class="line">route add -p 172.0.0.0 mask 255.0.0.0 外网网关</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改有线网络配置，取消自动获得IP，默认网关留空，这样就可以保证下次开机，不会自动分配ip和默认网关，又出现两条0.0.0.0的记录。</p>
+</li>
+</ol>
+<p>折腾完毕，由于使用了usb的无线网卡，期间尝试了再虚拟机中配置无线网络，发现并没有驱动，在github上找到驱动，又发现usb无线网卡属于移动设备，虚拟机和本机不能同时使用他。最终还是放弃了。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">折腾</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">折腾,网络</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://alenma.github.io/2018/06/13/折腾日记1-双网卡公司内外网自由切换/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/06/07/十年高考/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">十年高考</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "https://alenma.github.io/2018/06/13/折腾日记1-双网卡公司内外网自由切换/",
+  owner: 'AlenMa',
+  repo: 'blog-discuss',
+  oauth: {
+    client_id: 'be0f6b4f9ffac8fef5c1',
+    client_secret: '74ce856b18d28094ff02118d09ca42644aa5f672',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+  
 
 
           </div>
@@ -218,9 +337,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
@@ -285,6 +404,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">折腾,网络</a>
               </li>
             
             <div class="clearfix"></div>

@@ -144,19 +144,19 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-折腾" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-折腾日记1-双网卡公司内外网自由切换" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/13/折腾/">折腾</a>
+      <a class="article-title" href="/2018/06/13/折腾日记1-双网卡公司内外网自由切换/">折腾日记1-双网卡公司内外网自由切换</a>
     </h1>
   
 
         
-        <a href="/2018/06/13/折腾/" class="archive-article-date">
+        <a href="/2018/06/13/折腾日记1-双网卡公司内外网自由切换/" class="archive-article-date">
   	<time datetime="2018-06-13T04:28:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-13</time>
 </a>
         
@@ -164,7 +164,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>测试</p>
+        <p>搭建起hexo之后，由于公司内网代理的缘故，每次使用hexo d 命令都无法直接部署，需要手动复制.deploy_git文件夹生成的内容到指定目录再通过https的方式push到github上去。查边了资料，尝试了windows,linux环境，依然无法解决git协议代理的配置问题。最终放弃，想起双网卡配置路由表，实现部分ip走内网路由，其余ip走外网路由的方式。记录下整个过程，以便下次直接使用。</p>
+<ol>
+<li>无线网卡连接外网，有线连接内网。</li>
+<li>打开命令号，输入 route print 会发现两个 0.0.0.0 的网络目标记下两个网关，再去网络配置界面查看一下内网网管，区分好哪个是内网哪个是外网。</li>
+<li><p>删除0.0.0.0的路由记录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">route delte 0.0.0.0</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加0.0.0.0路由记录到外网网关。记得添加-p参数，代表永久路由。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">route add -p 0.0.0.0 mask 0.0.0.0 外网网关</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加需要走内网的网段，10.0.0.0 和172.0.0.0 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">route add -p 10.0.0.0 mask 255.0.0.0 内网网关</span><br><span class="line">route add -p 172.0.0.0 mask 255.0.0.0 外网网关</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改有线网络配置，取消自动获得IP，默认网关留空，这样就可以保证下次开机，不会自动分配ip和默认网关，又出现两条0.0.0.0的记录。</p>
+</li>
+</ol>
+<p>折腾完毕，由于使用了usb的无线网卡，期间尝试了再虚拟机中配置无线网络，发现并没有驱动，在github上找到驱动，又发现usb无线网卡属于移动设备，虚拟机和本机不能同时使用他。最终还是放弃了。</p>
 
       
 
@@ -178,7 +194,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">折腾</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">折腾,网络</a>
         		</li>
       		
 		</ul>
@@ -188,7 +204,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/13/折腾/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/06/13/折腾日记1-双网卡公司内外网自由切换/">展开全文 >></a>
         </p>
       
 
@@ -544,6 +560,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">折腾,网络</a>
               </li>
             
             <div class="clearfix"></div>
