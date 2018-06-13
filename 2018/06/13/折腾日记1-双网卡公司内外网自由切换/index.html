@@ -9,14 +9,14 @@
   <title>折腾日记1-双网卡公司内外网自由切换 | Alenma&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="搭建起hexo之后，由于公司内网代理的缘故，每次使用hexo d 命令都无法直接部署，需要手动复制.deploy_git文件夹生成的内容到指定目录再通过https的方式push到github上去。查遍了资料，尝试了windows,linux环境，依然无法解决git协议代理的配置问题。最终放弃，想起双网卡配置路由表，实现部分ip走内网路由，其余ip走外网路由的方式。记录下整个过程，以便下次直接使用。">
-<meta name="keywords" content="随笔,网络">
+<meta name="keywords" content="折腾,网络">
 <meta property="og:type" content="article">
 <meta property="og:title" content="折腾日记1-双网卡公司内外网自由切换">
 <meta property="og:url" content="https://alenma.github.io/2018/06/13/折腾日记1-双网卡公司内外网自由切换/index.html">
 <meta property="og:site_name" content="Alenma&#39;s Blog">
 <meta property="og:description" content="搭建起hexo之后，由于公司内网代理的缘故，每次使用hexo d 命令都无法直接部署，需要手动复制.deploy_git文件夹生成的内容到指定目录再通过https的方式push到github上去。查遍了资料，尝试了windows,linux环境，依然无法解决git协议代理的配置问题。最终放弃，想起双网卡配置路由表，实现部分ip走内网路由，其余ip走外网路由的方式。记录下整个过程，以便下次直接使用。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-13T06:22:34.671Z">
+<meta property="og:updated_time" content="2018-06-13T06:57:24.939Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="折腾日记1-双网卡公司内外网自由切换">
 <meta name="twitter:description" content="搭建起hexo之后，由于公司内网代理的缘故，每次使用hexo d 命令都无法直接部署，需要手动复制.deploy_git文件夹生成的内容到指定目录再通过https的方式push到github上去。查遍了资料，尝试了windows,linux环境，依然无法解决git协议代理的配置问题。最终放弃，想起双网卡配置路由表，实现部分ip走内网路由，其余ip走外网路由的方式。记录下整个过程，以便下次直接使用。">
@@ -193,7 +193,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">折腾</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -408,22 +408,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">折腾,网络</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">折腾;网络</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">折腾 网络</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">-折腾 -网络</a>
               </li>
              
               <li class="article-tag-list-item">
