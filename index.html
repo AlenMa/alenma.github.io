@@ -154,6 +154,87 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-数据埋点之路——2个月后续写" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/10/数据埋点之路——2个月后续写/">数据埋点之路——2个月后续写</a>
+    </h1>
+  
+
+        
+        <a href="/2018/10/10/数据埋点之路——2个月后续写/" class="archive-article-date">
+  	<time datetime="2018-10-10T05:35:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>商品推荐、BAT的各种精准广告投放早已不是新奇的事情了。然而，真正发现精准广告改变了自己的消费行为发生在最近一年的两件事上，突然感觉自己在面对一头数据的怪兽，不知不觉进入了它的套路。</p>
+<h3 id="双十一的千人千面"><a href="#双十一的千人千面" class="headerlink" title="双十一的千人千面"></a>双十一的千人千面</h3><p>淘宝的首页在做千人千面，也是很早的事情了，不过真正感觉到它的威力，是去年双十一时，老婆在关注某品牌的衣服，早早的加入了购物车，但是双十一零点并未付款。结果第二天醒来，在主页上看到一张正中下怀的优惠券抢购，刚好达到预期的价格，所以本来犹豫的一件衣服顺利下单成功。优惠券出现的位置是公共看似每个人都可以领的位置，但是使用我的淘宝缺怎么也找不到。似乎瞄准了消费者的心理预期专门设计的一场大促。</p>
+<h3 id="飞猪机票券"><a href="#飞猪机票券" class="headerlink" title="飞猪机票券"></a>飞猪机票券</h3><p>今年计划着去澳洲的旅行，各种平台搜索机票的价格，发现穷游和途牛上的价格比较低，于是每天实时关注这两个平台的价格波动。无意间搜了一下飞猪的机票，结果第二天收到一张国际机票的优惠券，价格优势超过了另外两个平台，达到了心理预期，下单成功。整个旅游预订的过程，booking,agoda,airbnb，itrip总觉得自己在被AI操控着，感觉每场大促是专门为你定制的，不同账户，不同终端看到的价格都不一致。失控中曾提到的网路时代为每个人定价的时代应该已经到来了，而且这个价格一定是通过大数据喂养的AI给出的符合消费者预期的定制化的价格，实现利益的最大化。</p>
+<h2 id="实践之路"><a href="#实践之路" class="headerlink" title="实践之路"></a>实践之路</h2><p>满足各个业务经理提出的解决方案的同时，发现自己缺失了对于数据的关注，由于投入资源与自己没有太大关系的缘故，每次活动、功能上线后的效果的评估没有去深耕，只关注于PV、UV简单的数值。得出的结论自然是有营销资源投放即有明显的增长，无则平稳的毫无波动。粉丝获取，业务的提升基本是资源粗放型增长的模式。精准营销在去年接入的场景化营销的模块，根据用户的行为制定一定策略，触发之后即像客户通过微信或者短信推荐产品，转化率相比之前增加了2倍，这是接入外部能力的一大进步。不过，看着本地系统有一堆客户上网轨迹的数据，没有很好的运用。</p>
+<h3 id="mta"><a href="#mta" class="headerlink" title="mta"></a>mta</h3><p>年初计划分析客户在每个页面上的操作，以及每一步的转化率接入了腾讯的mta数据分析，运用漏洞模型来分析页面的效率，优化提升整个过程。不过还是总体的数量上的，只能从宏观的效果去想办法优化整个流程，运营商的产品就是卖流量，并没有很大的优化空间，损失的目标用户无从知道为什么损失掉了。虽然MTA有所有IP的明细，但是并无法判断这个客户真实的属性和画像。偶然的机会，查看国内另外一款数据埋点的工具，友盟，在MTA的基础上添加了客户群的概念，根据客户的动作来为客户分群，再进行二次营销。于是产生了用手机号码来记录客户行为的想法。</p>
+<h3 id="最简单的反馈"><a href="#最简单的反馈" class="headerlink" title="最简单的反馈"></a>最简单的反馈</h3><p>自建页面所有事件的埋点结合和认证记录每一条用户的操作行为。8月7日上线以来，投放2个渠道日均2W的访问量，进行过一次小规模的用户推荐营销，转化率有6%，远高于平时营销1%的转化率。初见成效，不过限于目前埋点页面较少，客户的总量还是很低，真正的效果，还有待于进一步的验证。</p>
+<h3 id="直面客户，数据喂养的AI"><a href="#直面客户，数据喂养的AI" class="headerlink" title="直面客户，数据喂养的AI"></a>直面客户，数据喂养的AI</h3><p>选取了访问最靠前的十几位客户，详细的分析每位客户的使用习惯和访问轨迹，大概归纳出几位典型客户，下一步寻找这些客户的关键变量训练模型进行下一步更精准的筛选客户。</p>
+<h2 id="2个月后——具有匿名性的电子现金"><a href="#2个月后——具有匿名性的电子现金" class="headerlink" title="2个月后——具有匿名性的电子现金"></a>2个月后——具有匿名性的电子现金</h2><p>这篇文章上面部分写于两个月前，埋点数据已经运行两个多月，期间因为其他项目的原因耽误了进一步的计划。休假归来在微博飞猪杀熟客的热搜，现在想来其实无可非议的，作为卖家拉新自然会投入更多的资源来吸引客户，拉新投入资源的相对于老客户自然就变成了杀熟。只是获取的数据越多，AI喂养的越好越能给出更高更接近客户心理价位的价格。站在企业角度有两个难点1、如何识别一个客户并且将搜集的数据关联起来 2、用收集到的数据训练模型所用的算法和参数；作为消费者，应该学着如何利用多个身份标示出现在商家的面前，邮箱、手机、身份证、IMEI等等，做一个反大数据的购买助手也许有点意思。匿名性很重要，现金具有一定的匿名性，但是今天使用越来越多的微信支付、支付宝、信用卡这些完全将自己的购买行为暴露给了这几个大的集团：腾讯、阿里、以及银行。也许真正的具有匿名性的电子现金是区块链发展的动力。引用失控中提到的网络的链接需要加密的驯服。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">产品</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/10/10/数据埋点之路——2个月后续写/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-进击的小龙虾" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -849,10 +930,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">生活</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">产品</a>
               </li>
              
@@ -866,6 +943,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">科技</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">生活</a>
               </li>
             
             <div class="clearfix"></div>
